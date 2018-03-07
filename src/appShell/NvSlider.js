@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
 class NvSlider extends Component {
-    state = {
-        collapsed: this.props.collapsed,
-      };
     render(){
         return (
-         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+         <Sider trigger={null} collapsible collapsed={this.props.collapsed}>
             <div className="logo" style={{minHeight: '84px'}} />
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
@@ -45,4 +43,6 @@ class NvSlider extends Component {
     }
 }
 
-export default NvSlider;
+export default connect((state)=>{
+    return state.sideBar;
+  })(NvSlider);
