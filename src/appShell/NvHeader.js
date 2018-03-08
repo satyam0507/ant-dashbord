@@ -7,7 +7,10 @@ const { Header } = Layout;
 
 class NvHeader extends Component {
     toggle = () => {
-        this.props.dispatch(changeCollapse(!this.props.collapsed));
+        this.props.dispatch((dispatch)=>{ 
+          dispatch(changeCollapse(!this.props.collapsed));
+        }
+        );
       }
     render(){
         return (

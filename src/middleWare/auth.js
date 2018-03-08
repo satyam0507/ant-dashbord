@@ -1,4 +1,4 @@
-const auth = (store)=>(next)=>(action)=>{
+const auth = (store) => (next) => (action) => {
     next(action);
 }
 
