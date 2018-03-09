@@ -37,5 +37,4 @@ class AppShell extends Component {
   }
 }
 
-
 export default AppShell;
