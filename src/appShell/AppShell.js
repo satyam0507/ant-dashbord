@@ -11,8 +11,8 @@ import Entity from '../components/Entity';
 import Intent from '../components/Intent';
 import User from '../components/User';
 
-import { Layout} from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
+import {Layout} from 'antd';
+const {Content} = Layout;
 
 class AppShell extends Component {
 

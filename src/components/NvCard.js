@@ -4,7 +4,7 @@ import { Card } from 'antd';
 
 
 class NvCard extends Component {
-    constructor(abc){
+    constructor(){
         super();
     }
   render() {
