@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
+import { Layout, Menu, Icon } from 'antd';
+const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
 class NvSlider extends Component {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import './../css/App.css'; 
-import {Route,Switch} from 'react-router-dom';
+import './../css/App.css';
+import AuthRoute from "../routes/AuthRoute";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import NvSlider from './NvSlider';
 import NvHeader from './NvHeader';
 
@@ -11,25 +13,31 @@ import Entity from '../components/Entity';
 import Intent from '../components/Intent';
 import User from '../components/User';
 
-import { Layout} from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
+import { Layout } from 'antd';
+const {Content} = Layout;
 
 class AppShell extends Component {
-
+  componentDidMount() {
+    console.log(this.props);
+    if (this.props.isAuthenticated){
+      this.props.history.push('/home');
+    }else{
+      // window.location.href="https://dev1.notifyvisitors.com/";
+    }
+  }
   render() {
+    const {location} = this.props;
     return (
       <Layout style={{ minHeight: '100vh' }}>
-        <NvSlider collapsed={this.props.collapsed}/>
+        <NvSlider collapsed={this.props.collapsed} />
         <Layout>
-          <NvHeader/>
+          <NvHeader />
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
-            <Switch>
-                  <Route path="/home" exact component={Home}/>
-                  <Route path="/about" exact component={About}/>
-                  <Route path="/entity" exact component={Entity}/>
-                  <Route path="/intent" exact component={Intent}/>
-                  <Route path="/user" exact component={User}/>
-              </Switch>
+              <AuthRoute path="/home" exact component={Home} location={location} />
+              <AuthRoute path="/about" exact component={About} location={location} />
+              <AuthRoute path="/entity" exact component={Entity} location={location} />
+              <AuthRoute path="/intent" exact component={Intent} location={location} />
+              <AuthRoute path="/user" exact component={User} location={location} />
           </Content>
         </Layout>
       </Layout>
@@ -37,4 +45,18 @@ class AppShell extends Component {
   }
 }
 
-export default AppShell;
+AppShell.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+};
+
+function mapStateToProps(state) {
+  return {
+    isAuthenticated:state.auth.isAuthenticated,
+    collapsed:state.sideBar.collapsed
+  }
+}
+
+export default connect(mapStateToProps)(AppShell);

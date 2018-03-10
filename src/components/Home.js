@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Card,Button} from 'antd';
-import NvCard from './NvCard';
+import {Button} from 'antd';
+import NvCard from './NvCard'; 
 
 
 

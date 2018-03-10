@@ -1,13 +1,15 @@
+import {USER_AUTHENTICATED} from '../actions/const';
 const _default = {
-    "auth": false
+    "isAuthenticated": false
 };
 const sideBar = (state = _default, action) => {
     switch (action.type) {
-        case 'CHANGE_SIDEBAR_COLLAPSED':
-            state = { ...state,
-                collapsed: action.payload
+        case USER_AUTHENTICATED:
+            state = { ...state, 
+                isAuthenticated: action.payload
             }
             break;
+        default:
     }
     return state;
 };
