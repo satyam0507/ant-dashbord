@@ -33,7 +33,12 @@ class NvSlider extends Component {
                 key="sub1"
                 title={<span><Icon type="user" /><span>User</span></span>}
             >
-                <Menu.Item key="4">Tom</Menu.Item>
+                <Menu.Item key="4">
+                    <Link to="/user/user1">
+                        <Icon type="file" />
+                        <span>User1</span>
+                    </Link>
+                </Menu.Item>
                 <Menu.Item key="5">Bill</Menu.Item>
                 <Menu.Item key="6">Alex</Menu.Item>
             </SubMenu>

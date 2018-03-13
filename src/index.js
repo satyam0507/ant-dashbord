@@ -15,7 +15,7 @@ store.dispatch({type:AUTHENTICATE_USER});
 ReactDOM.render(
     <Provider store={store}>
         <Router history={customHistory}>
-            <Route component={AppShell}/> 
+            <Route component={AppShell}/>
         </Router>
     </Provider>
 ,roolEl);
