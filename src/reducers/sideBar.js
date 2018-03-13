@@ -8,6 +8,7 @@ const sideBar = (state = _default, action) => {
                 collapsed: action.payload
             }
             break;
+        default:
     }
     return state;
 };

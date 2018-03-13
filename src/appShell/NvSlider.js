@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
+import { Layout, Menu, Icon } from 'antd';
+const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
 class NvSlider extends Component {
@@ -33,7 +33,12 @@ class NvSlider extends Component {
                 key="sub1"
                 title={<span><Icon type="user" /><span>User</span></span>}
             >
-                <Menu.Item key="4">Tom</Menu.Item>
+                <Menu.Item key="4">
+                    <Link to="/user/user1">
+                        <Icon type="file" />
+                        <span>User1</span>
+                    </Link>
+                </Menu.Item>
                 <Menu.Item key="5">Bill</Menu.Item>
                 <Menu.Item key="6">Alex</Menu.Item>
             </SubMenu>
