@@ -5,29 +5,48 @@ import About from '../components/About';
 import Entity from '../components/Entity';
 import Intent from '../components/Intent';
 import User from '../components/User';
+import User1 from '../components/User1';
 
 
 const routes = [
     {
         path:'/',
         exact:true,
-        component:RedirectToHome
+        routecomponent:RedirectToHome
     },
     {
         path:'/home',
         exact:true,
-        component:Home
+        routecomponent:Home
     },
     {
         path:'/about',
         exact:true,
-        component:About
+        routecomponent:About
     },
     {
         path:'/user',
         exact:false,
-        component:User
+        routecomponent:User,
+        routes : [
+            {
+                path:'/user/user1',
+                exact:true,
+                routecomponent:User1
+            }
+        ]
     },
+    {
+        path:'/intent',
+        exact:false,
+        routecomponent:Intent 
+    },
+    {
+        path:'/entity',
+        exact:false,
+        routecomponent:Entity 
+    },
+
 
 ];
 

@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
-import AuthRoute from "./AuthRoute";
-import User1 from './User1';
-import { Layout } from 'antd';
-const {Content} = Layout;
+import React,{Component}from 'react';
+// import AuthRoute from "./AuthRoute";
+import RouteWithSubRoutes from "../routes/RouteWithSubRoutes";
 
 class User extends Component {
-  render() {
-    const {location,isAuthenticated,match} = this.props;
-    return (
-      <div>
-        <p>This is User</p>
-            <AuthRoute path={match.url+'/user1'} exact component={User1} location={location} />
-        </div>
-    );
+  render(){
+    let {routes,location,isAuthenticated} = this.props;
+      return(
+          <div>
+            <p>This is User</p>
+            {routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} location={location} isAuthenticated={isAuthenticated} />)}
+            </div>
+    )
   }
 }
 

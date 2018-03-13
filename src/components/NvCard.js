@@ -4,9 +4,6 @@ import { Card } from 'antd';
 
 
 class NvCard extends Component {
-    constructor(){
-        super();
-    }
   render() {
     return (
       <div style={{ background: '#ECECEC', padding: '30px' }} abc = {this.props.abc}>

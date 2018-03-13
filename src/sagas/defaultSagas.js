@@ -11,7 +11,10 @@ export function* authenticate_user(action){
         yield put({type:USER_AUTHENTICATED,payload:resObj.auth});
     } catch(err){
         console.log(err);
-        yield put({type:USER_AUTHENTICATED,payload:true});
+        yield put({type:USER_AUTHENTICATED,payload:{
+            isAuthenticated:true,
+            isAuthCallBack:true
+        }});
     }
     
 }
