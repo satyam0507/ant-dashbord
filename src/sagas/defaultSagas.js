@@ -18,3 +18,7 @@ export function* authenticate_user(action){
     }
     
 }
+
+export function* user_loged_out(action){
+    yield put({type:'TOGGEL_AUTH',payload:false});
+}

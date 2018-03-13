@@ -10,6 +10,11 @@ const sideBar = (state = _default, action) => {
                 isAuthenticated: action.payload.isAuthenticated,isAuthCallBack:action.payload.isAuthCallBack
             }
             break;
+        case 'TOGGEL_AUTH':
+        state = { ...state, 
+            isAuthenticated: action.payload
+        }
+        break;
         default:
     }
     return state;

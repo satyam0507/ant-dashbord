@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import {Button} from 'antd';
+import {connect}from 'react-redux';
 import NvCard from './NvCard'; 
 
 
 
 class Home extends Component {
   authUser(){
-    console.log('hahaha');
+    this.props.dispatch({type:'USER_LOGED_OUT'});
   }
   render() {
     return (
       <div>
         <p>This is Home</p>
         <NvCard abc = "ahhaha"/>
-        <Button type="primary" onClick={this.authUser}>Auth</Button>
+        <Button type="primary" onClick={this.authUser.bind(this)}>Log Out</Button>
       </div>
     );
   }
 }
-
-export default Home;
+function mapStateToProps(state){return state};
+// function mapDispatchToProps(dispatch){return};
+export default connect(mapStateToProps)(Home);
