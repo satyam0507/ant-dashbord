@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './../css/App.css';
 
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
+import {connect} from "react-redux";  
 
 import NvSlider from './NvSlider';
 import NvHeader from './NvHeader';
@@ -11,7 +11,7 @@ import NvHeader from './NvHeader';
 import RouteWithSubRoutes from "../routes/RouteWithSubRoutes";
 import routes from "../routes/Routes";
 
-import NvLoader from '../components/NvLoader';
+import NvLoader from '../components/NvLoader';  
 
 import { Layout } from 'antd';
 const {Content} = Layout;
