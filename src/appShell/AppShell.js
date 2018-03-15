@@ -18,6 +18,11 @@ const {Content} = Layout;
 
 class AppShell extends Component {
   render() {
+<<<<<<< Updated upstream
+=======
+    console.log('abc');      
+    console.log('hahaha');
+>>>>>>> Stashed changes
     const {location,isAuthenticated,isAuthCallBack} = this.props;
       return (
         <div>
