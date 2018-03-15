@@ -18,7 +18,7 @@ const {Content} = Layout;
 
 class AppShell extends Component {
   render() {
-    console.log('abc');
+    console.log('abc');      
     const {location,isAuthenticated,isAuthCallBack} = this.props;
       return (
         <div>
